@@ -1,4 +1,4 @@
 spring-petclinic.iml
 target/
 .idea
-user-module.iml
+oauth-module.iml
