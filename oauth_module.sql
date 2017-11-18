@@ -27,9 +27,10 @@ CREATE TABLE `app_user` (
   `username` varchar(45) NOT NULL,
   `password` varchar(60) NOT NULL,
   `enabled` tinyint(4) DEFAULT NULL,
+  `email` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,8 +39,34 @@ CREATE TABLE `app_user` (
 
 LOCK TABLES `app_user` WRITE;
 /*!40000 ALTER TABLE `app_user` DISABLE KEYS */;
-INSERT INTO `app_user` VALUES (1,'0718847868','$2a$04$GaZXovzFalfHt.wxY5VTDuLeK5JlrlexKj3YsjxIYWIZ6hII00Xp.',1);
+INSERT INTO `app_user` VALUES (1,'0718847868','$2a$04$GaZXovzFalfHt.wxY5VTDuLeK5JlrlexKj3YsjxIYWIZ6hII00Xp.',1,NULL),(2,'0715547868','$2a$10$XzFVTA41mg/7hZym.HmZue.NuwLsQXTYbNDEHOxir7198M7837owW',0,NULL),(3,'07134547868','$2a$10$hdQkcEfcuMvI7H.h6VMkvepXf8Wm8pg6vDUCXPBe7XMpJxJnxEdjG',0,NULL),(4,'07133347868','$2a$10$a1cjMsnDAEeR2fTuybcXDuznVKDl2qquGL2lfF2Fb7nRF.uPFOT4K',0,NULL),(5,'07199947868','$2a$10$QDI0jqvnJCxw2sUsIhwosuoOqpcGI19Sz.VY2.Z7jiRhNNwK6Z.7G',0,NULL),(6,'07159947868','$2a$10$XVED6FcT0DFPZFXUXyQD8.1dTvGxjfP.hE6pp9/Ulw/y411tmQhzK',1,NULL);
 /*!40000 ALTER TABLE `app_user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_token`
+--
+
+DROP TABLE IF EXISTS `user_token`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_token` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_token` varchar(45) DEFAULT NULL,
+  `app_user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `user_token_UNIQUE` (`user_token`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_token`
+--
+
+LOCK TABLES `user_token` WRITE;
+/*!40000 ALTER TABLE `user_token` DISABLE KEYS */;
+INSERT INTO `user_token` VALUES (1,'yEPFr',4),(2,'X6mUE',5),(3,'dYWou',6);
+/*!40000 ALTER TABLE `user_token` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-01 17:48:40
+-- Dump completed on 2017-11-18 15:08:10
