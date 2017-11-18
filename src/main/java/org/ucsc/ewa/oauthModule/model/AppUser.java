@@ -17,6 +17,9 @@ public class AppUser extends BaseEntity {
     @Column(name = "enabled")
     private boolean enabled;
 
+    @Column(name = "email")
+    private String email;
+
     public String getUsername() {
         return username;
     }
@@ -39,5 +42,13 @@ public class AppUser extends BaseEntity {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
