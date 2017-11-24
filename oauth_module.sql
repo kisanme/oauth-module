@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
 --
 -- Host: localhost    Database: ewa_oauth
 -- ------------------------------------------------------
--- Server version	5.7.20-0ubuntu0.16.04.1
+-- Server version	5.7.17
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -30,7 +30,7 @@ CREATE TABLE `app_user` (
   `email` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `app_user` (
 
 LOCK TABLES `app_user` WRITE;
 /*!40000 ALTER TABLE `app_user` DISABLE KEYS */;
-INSERT INTO `app_user` VALUES (1,'0718847868','$2a$04$GaZXovzFalfHt.wxY5VTDuLeK5JlrlexKj3YsjxIYWIZ6hII00Xp.',1,NULL),(2,'0715547868','$2a$10$XzFVTA41mg/7hZym.HmZue.NuwLsQXTYbNDEHOxir7198M7837owW',0,NULL),(3,'07134547868','$2a$10$hdQkcEfcuMvI7H.h6VMkvepXf8Wm8pg6vDUCXPBe7XMpJxJnxEdjG',0,NULL),(4,'07133347868','$2a$10$a1cjMsnDAEeR2fTuybcXDuznVKDl2qquGL2lfF2Fb7nRF.uPFOT4K',0,NULL),(5,'07199947868','$2a$10$QDI0jqvnJCxw2sUsIhwosuoOqpcGI19Sz.VY2.Z7jiRhNNwK6Z.7G',0,NULL),(6,'07159947868','$2a$10$XVED6FcT0DFPZFXUXyQD8.1dTvGxjfP.hE6pp9/Ulw/y411tmQhzK',1,NULL);
+INSERT INTO `app_user` VALUES (1,'0718847868','$2a$04$GaZXovzFalfHt.wxY5VTDuLeK5JlrlexKj3YsjxIYWIZ6hII00Xp.',1,'nasik2ms@gmail.com'),(2,'0715547868','$2a$10$XzFVTA41mg/7hZym.HmZue.NuwLsQXTYbNDEHOxir7198M7837owW',1,'abc@abc.com');
 /*!40000 ALTER TABLE `app_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -56,7 +56,7 @@ CREATE TABLE `user_token` (
   `app_user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_token_UNIQUE` (`user_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +65,7 @@ CREATE TABLE `user_token` (
 
 LOCK TABLES `user_token` WRITE;
 /*!40000 ALTER TABLE `user_token` DISABLE KEYS */;
-INSERT INTO `user_token` VALUES (1,'yEPFr',4),(2,'X6mUE',5),(3,'dYWou',6);
+INSERT INTO `user_token` VALUES (1,'yEPFr',4),(2,'X6mUE',5),(3,'dYWou',6),(4,'CawXg',7),(5,'2Phui',8),(6,'9QZFu',9),(7,'jXGtC',10),(8,'cutbl',11),(9,'yXRSQ',12),(10,'tFEvT',13),(11,'oTTv6',14);
 /*!40000 ALTER TABLE `user_token` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -78,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-18 15:08:10
+-- Dump completed on 2017-11-24 14:08:48
